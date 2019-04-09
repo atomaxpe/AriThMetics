@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+@*<h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <p>Use this area to provide additional information.</p>*@
+
+<script language="Javascript">
+    var maxtime = 60 * 60
+    function CountDown() {
+        if (maxtime >= 0) {
+            minutes = Math.floor(maxtime / 60);
+            seconds = Math.floor(maxtime % 60);
+            msg = "  " + minutes + "分" + seconds + "秒";
+            document.all["timer"].innerHTML = msg;
+            if (maxtime == 5 * 60)
+                alert('同学请注意！还有五分钟结束考试！');
+            --maxtime;
+        }
+        else {
+            clearInterval(timer);
+            alert("时间到！");
+        }
+    }
+    timer = setInterval("CountDown()", 1000);
+</script>
+
+<div id="timer" style="color:red;top:160px;position:absolute;left:750px;font-size:24px;"></div>
+<div class="promotion1">
+    考试时间:
+</div>
+
+<div class="promotion2-1">
+    <a href="~/Home/lndex">首页</a>
+</div>
+<div class="promotion2">
+    打印题目
+</div>
+
+<div class="promotion3">
+    打印答题卡
+</div>
+<div class="promotion4">
+    交卷
+</div>
+
+<div>
+
+    <textarea rows="30" cols="60" class="promotion5">
+            <!--此处为出题卡-->
+    </textarea>
+
+    <textarea rows="30" cols="60" class="promotion5-1">
+            <!--此处为答题卡-->
+    </textarea>
+</div>
